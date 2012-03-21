@@ -14,7 +14,7 @@ function f(largestValue) {
     return fibs;
 }
 
-function getEvenFibs(fibs){
+function getEvenFibsSum(fibs){
    var i;
    var sum=0;
    for(i=0; i<fibs.length; i++){
