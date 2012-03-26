@@ -12,8 +12,8 @@ ToDoLists.prototype.getTask = function(targetTask){
 	var result = null
 	    this.toDoLists.forEach(function(task){
 			if (task.content == targetTask.content){
-				console.log(task.content)
-				console.log(targetTask.content)
+				// console.log(task.content)
+				// console.log(targetTask.content)
 				result = task;
 			}
 			else result = null;
@@ -22,16 +22,12 @@ ToDoLists.prototype.getTask = function(targetTask){
 		return result;
 		
 }
-// 
-// function getTask(entryContent){
-// 	for(var task in toDoLists){
-// 		if(task.content == entryContent)
-// 			return task;
-// 		else return null;
-// 	}
-// }
-// function toMark(entryContent){
-// 	var foundTask = getTask(entryContent)
-// 	if(foundTask!=null)
-// 		foundTask.setMarked
-// }
+
+ToDoLists.prototype.toMark = function(targetTask){
+	var foundTask = this.getTask(targetTask)
+	var result = false;
+	if(foundTask!=null)
+		foundTask.setMarked()
+		result = true;
+	return result; 
+}

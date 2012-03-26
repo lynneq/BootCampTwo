@@ -34,26 +34,23 @@ describe('when I want to find task', function(){
 	});
 
 });
-// 
-// describe('when i keep track of completion of tasks', function(){
-// 	var newTask = new Task("first task");
-// 	var actualList = new ToDoLists();
-// 
-// 	beforeEach(function(){
-// 		actualList.addTask(newTask);
-// 	});
-// 
-// 	it('should be able to mark as a completed task', function(){
-// 		toMark(newTask);
-// 		var taskEntry = actualList.getTask(newTask)
-// 		expect(taskEntry.isMarked()).toEquals(true)
-// 	});
-// 	
-// 	it('task should be marked as a completed task', function(){
-// 		
-// 	});
-// 	
-// 	it('should not be able to mark if the task is completed', function(){
-// 		
-// 	});
-// });
+
+describe('when I keep track of completion of tasks', function(){
+	var taskOne = new Task("first task");
+	var taskTwo = new Task("second task");
+	var actualList = new ToDoLists();
+
+	beforeEach(function(){
+		actualList.addTask(taskOne);
+	});
+	
+	it('should be able to know if the task is not completed', function(){
+		actualList.addTask(taskTwo);
+		expect(actualList.getTask(taskTwo).isMarked()).toEqual(false)
+	});
+
+	it('should be able to mark as a completed task', function(){
+		expect(actualList.toMark(taskOne)).toEqual(true)
+		expect(actualList.getTask(taskOne).isMarked()).toEqual(true)
+	});
+});
